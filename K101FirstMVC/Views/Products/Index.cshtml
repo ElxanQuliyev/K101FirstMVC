@@ -1,0 +1,39 @@
+﻿@using K101FirstMVC.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+@{
+    int b = 1;
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Product name</th>
+            <th>Price</th>
+            <th>Count</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product k101 in ViewBag.k101List)
+        {
+            <tr>
+                <td>@b</td>
+                <td>@k101.Name</td>
+                <td>@k101.Price</td>
+                <td>@k101.Quantity</td>
+                <td>@k101.Category.Name</td>
+                <td>
+                    <a href="/Products/Detail/@k101.ID">Edit</a>
+                </td>
+            </tr>
+            b++;
+        }
+    </tbody>
+</table>
+
+
+
